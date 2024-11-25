@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursor Hidden and Touch Disabled</title>
+  <style>
+    /* 마우스 커서를 숨기는 CSS */
+    body {
+      cursor: none; /* 마우스 커서를 숨깁니다 */
+      overflow: hidden; /* 스크롤을 숨깁니다 */
+    }
+
+    /* 터치 이벤트를 막는 CSS */
+    body, html {
+      touch-action: none; /* 터치 제스처를 막습니다 */
+    }
+
+    /* 터치 및 마우스 이벤트를 강제로 막는 JavaScript */
+    document.addEventListener('touchstart', function (e) {
+      e.preventDefault(); // 터치 이벤트를 막습니다
+    });
+
+    document.addEventListener('mousedown', function (e) {
+      e.preventDefault(); // 마우스 클릭 이벤트를 막습니다
+    });
+  </style>
+</head>
+<body>
+  <h1>마우스 커서가 숨겨지고 터치가 비활성화된 페이지입니다.</h1>
+  <p>페이지에서 마우스나 터치로 아무것도 클릭하거나 드래그할 수 없습니다.</p>
+  <script>
+    // 마우스와 터치 입력을 막는 JavaScript
+    window.addEventListener('mousemove', function (e) {
+      // 마우스 커서가 화면에서 보이지 않도록 하기
+      document.body.style.cursor = 'none';
+    });
+
+    document.body.style.cursor = 'none';  // 페이지 로딩 시 마우스 커서 숨기기
+  </script>
+</body>
+</html>
